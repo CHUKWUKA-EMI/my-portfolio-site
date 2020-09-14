@@ -2,6 +2,7 @@ import React from "react";
 import { Typography, Grid } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import Typed from "react-typed";
+import "react-typed/dist/animatedCursor.css";
 import bgImage from "../static/hero-bg1.jpg";
 
 const useStyles = makeStyles((theme) => ({
@@ -46,16 +47,21 @@ const IntroPage = () => {
   return (
     <Grid direction="column" container className={classes.root}>
       <Grid direction="column" className={classes.typedGrid} item xs={12}>
-        <Typography className={classes.typed1}>CHUKWUKA EMI</Typography>
+        <Typography
+          data-aos="slide-right"
+          data-aos-duration="1000"
+          className={classes.typed1}
+        >
+          I'm Chukwuka Emi
+        </Typography>
         <Grid item>
           <Typed
             className={classes.typed2}
             strings={[
-              "Software Engineer",
-              "Web Developer",
-              "Web designer",
-              "Full Stack Developer",
-              "Freelancer",
+              "A Software Engineer",
+              "A Web Developer",
+              "A Full Stack Developer",
+              "A Freelancer",
             ]}
             typeSpeed={50}
             backSpeed={60}
