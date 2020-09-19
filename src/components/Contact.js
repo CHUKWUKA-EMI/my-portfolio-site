@@ -376,7 +376,7 @@ const Contact = () => {
               <div style={{ marginTop: "1em" }}>
                 <LocationOn className={classes.icons} /> Lagos, Nigeria{" "}
                 <div style={{ height: "1rem" }}></div>
-                <PhoneEnabled className={classes.icons} /> +2347043969842
+                <PhoneEnabled className={classes.icons} /> +2347034969842
                 <br /> <div style={{ height: "1rem" }}></div>
                 <Mail className={classes.icons} /> emichukwuka@gmail.com
               </div>

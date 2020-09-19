@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     justifyContent: "center",
     flexDirection: "row",
-    height: 700,
+    height: 800,
     backgroundImage: `url(${bgImage})`,
     backgroundSize: "cover",
     maxWidth: "100%",
@@ -49,7 +49,7 @@ const IntroPage = () => {
       <Grid direction="column" className={classes.typedGrid} item xs={12}>
         <Typography
           data-aos="slide-right"
-          data-aos-duration="1000"
+          data-aos-duration="2000"
           className={classes.typed1}
         >
           I'm Chukwuka Emi
@@ -63,9 +63,9 @@ const IntroPage = () => {
               "A Full Stack Developer",
               "A Freelancer",
             ]}
-            typeSpeed={50}
+            typeSpeed={70}
             backSpeed={60}
-            backDelay={1500}
+            backDelay={2000}
             loop
             showCursor
           />

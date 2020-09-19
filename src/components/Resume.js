@@ -1,7 +1,13 @@
 import React from "react";
-import { Grid, Typography, Card, CardContent } from "@material-ui/core";
+import {
+  Grid,
+  Typography,
+  Card,
+  CardContent,
+  Divider,
+} from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import { School } from "@material-ui/icons";
+import { School, Code } from "@material-ui/icons";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -45,6 +51,9 @@ const useStyles = makeStyles((theme) => ({
   cardContent: {
     fontFamily: "Libre Baskerville, serif",
   },
+  icons: {
+    color: "#1979a9",
+  },
 }));
 const Resume = () => {
   const classes = useStyles();
@@ -71,7 +80,10 @@ const Resume = () => {
                 <Typography className={classes.cardheader} variant="h6">
                   Chukwuka Emi
                 </Typography>
-                <Typography paragraph>
+                <Typography
+                  style={{ backgroundColor: "#1979a9", color: "white" }}
+                  paragraph
+                >
                   <em>
                     Innovative and deadline-driven Software Developer with 1+
                     years of experience developing and delivering user-centered
@@ -87,7 +99,10 @@ const Resume = () => {
                   +2347034969842
                 </Typography>
 
-                <Typography className={classes.cardContent}>
+                <Typography
+                  style={{ overflowWrap: "break-word" }}
+                  className={classes.cardContent}
+                >
                   emichukwuka@gmail.com
                 </Typography>
               </CardContent>
@@ -104,12 +119,14 @@ const Resume = () => {
                 <Typography className={classes.cardheader} variant="h6">
                   Bachelor of Electronic Engineering
                 </Typography>
-                <Typography className={classes.cardContent}>
-                  2012 - 2017
-                </Typography>
-                <Typography paragraph>
-                  <em>University of Nigeria, Nsukka</em>
-                </Typography>
+                <div style={{ backgroundColor: "#1979a9", color: "white" }}>
+                  <Typography className={classes.cardContent}>
+                    2012 - 2017
+                  </Typography>
+                  <Typography paragraph>
+                    <em>University of Nigeria, Nsukka</em>
+                  </Typography>
+                </div>
                 <Typography paragraph>
                   <b>Activities</b>: Student Member, Nigeria Society of
                   Engineers [NSE] | IEEE, Student Member
@@ -131,35 +148,94 @@ const Resume = () => {
               elevation={15}
               className={classes.card}
             >
-              <CardContent className={classes.cardContent}>
+              <CardContent
+                style={{ listStyle: "none" }}
+                className={classes.cardContent}
+              >
                 <Typography className={classes.cardheader} variant="h6">
+                  Full Stack Software Developer
+                </Typography>
+                <Typography
+                  style={{
+                    marginBottom: "1rem",
+                    backgroundColor: "#1979a9",
+                    color: "white",
+                  }}
+                  className={classes.cardContent}
+                >
+                  Organization: <em> Vasiti </em>
+                </Typography>
+
+                <Typography
+                  style={{ marginBottom: "1rem" }}
+                  className={classes.cardContent}
+                  component="li"
+                >
+                  <Code className={classes.icons} /> Building an online AI
+                  powered platform where students can register and enroll in U.K
+                  based Institutions for distant learning, and also connect and
+                  collaborate with other students with similar interests.
+                </Typography>
+                <Typography
+                  style={{ marginBottom: "1rem" }}
+                  className={classes.cardContent}
+                  component="li"
+                >
+                  <Code className={classes.icons} /> Building an E-Commerce
+                  website where Wholesalers and student enterepreneurs can sell
+                  and buy goods and services.
+                </Typography>
+                <Typography
+                  style={{ marginBottom: "1rem" }}
+                  className={classes.cardContent}
+                  component="li"
+                >
+                  <Code className={classes.icons} /> Building an Admin site
+                  where all Vasiti's web platforms can be managed.
+                </Typography>
+                <Divider />
+                <Typography
+                  style={{ marginTop: "1rem" }}
+                  className={classes.cardheader}
+                  variant="h6"
+                >
                   Freelance Software Developer
                 </Typography>
-                <Typography className={classes.cardContent}>
-                  2019 - Present
-                </Typography>
-                <Typography paragraph>
-                  <em>Lagos, Nigeria </em>
+                <div style={{ backgroundColor: "#1979a9", color: "white" }}>
+                  <Typography className={classes.cardContent}>
+                    2019 - Present
+                  </Typography>
+                  <Typography paragraph>
+                    <em>Lagos, Nigeria </em>
+                  </Typography>
+                </div>
+                <Typography
+                  style={{ marginBottom: "1rem" }}
+                  className={classes.cardContent}
+                >
+                  <Code className={classes.icons} /> Recommended and consulted
+                  with clients on the most appropriate web technologies and
+                  development principles.
                 </Typography>
 
-                <Typography className={classes.cardContent}>
-                  Recommended and consulted with clients on the most appropriate
-                  web technologies and development principles.
+                <Typography
+                  style={{ marginBottom: "1rem" }}
+                  className={classes.cardContent}
+                >
+                  <Code className={classes.icons} /> Managed up to 3 projects or
+                  tasks at a given time while under pressure
                 </Typography>
 
-                <Typography className={classes.cardContent}>
-                  {" "}
-                  Managed up to 3 projects or tasks at a given time while under
-                  pressure
-                </Typography>
-
-                <Typography className={classes.cardContent}>
-                  Created design presentations and proposals for clients and
-                  managers
+                <Typography
+                  style={{ marginBottom: "1rem" }}
+                  className={classes.cardContent}
+                >
+                  <Code className={classes.icons} /> Created design
+                  presentations and proposals for clients and managers
                 </Typography>
                 <Typography className={classes.cardContent}>
-                  Built 20+ projects and applications which are accessible on
-                  github repositories.
+                  <Code className={classes.icons} /> Built 20+ projects and
+                  applications which are accessible on github repositories.
                 </Typography>
               </CardContent>
             </Card>

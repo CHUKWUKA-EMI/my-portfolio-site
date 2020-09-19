@@ -25,7 +25,6 @@ import {
   Twitter,
   LinkedIn,
   GitHub,
-  Home,
   Person,
   Apps,
   ContactMail,
@@ -162,11 +161,6 @@ function MainPage(props) {
 
   const navIcons = [
     {
-      icon: <Home className={classes.icons} />,
-      text: "Home",
-      link: "home",
-    },
-    {
       icon: <Person className={classes.icons} />,
       text: "About me",
       link: "about",
@@ -222,7 +216,7 @@ function MainPage(props) {
         {navIcons.map((icon, index) => (
           <ListItem button key={index}>
             <ListItemIcon>{icon.icon}</ListItemIcon>
-            <ListItemText>
+            <ListItemText onClick={() => setMobileOpen(!mobileOpen)}>
               <Link
                 to={icon.link}
                 spy={true}
