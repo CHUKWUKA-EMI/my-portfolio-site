@@ -216,7 +216,7 @@ function MainPage(props) {
         {navIcons.map((icon, index) => (
           <ListItem button key={index}>
             <ListItemIcon>{icon.icon}</ListItemIcon>
-            <ListItemText onClick={() => setMobileOpen(!mobileOpen)}>
+            <ListItemText>
               <Link
                 to={icon.link}
                 spy={true}
