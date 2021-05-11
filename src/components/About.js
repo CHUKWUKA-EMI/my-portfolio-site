@@ -154,15 +154,15 @@ const About = () => {
             </div>
             <div className={classes.skillsDiv}>
               <Grid item xs={12} sm={12} md={4}>
-                <i className="fab fa-gofore"></i>
+                <i className="fab fa-gofore fa-3x m-2"></i>
                 <p>Golang</p>
               </Grid>
               <Grid item xs={12} sm={12} md={4}>
-                <i className="fab fa-php"></i>
+                <i className="fab fa-php fa-3x m-2"></i>
                 <p>PHP</p>
               </Grid>
               <Grid item xs={12} sm={12} md={4}>
-                <i className="fab fa-angular"></i>
+                <i className="fab fa-angular fa-3x m-2"></i>
                 <p>Angular</p>
               </Grid>
             </div>
