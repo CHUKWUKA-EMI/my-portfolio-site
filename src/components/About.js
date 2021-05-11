@@ -152,6 +152,20 @@ const About = () => {
                 <p>Databases</p>
               </Grid>
             </div>
+            <div className={classes.skillsDiv}>
+              <Grid item xs={12} sm={12} md={4}>
+                <i className="fab fa-gofore"></i>
+                <p>Golang</p>
+              </Grid>
+              <Grid item xs={12} sm={12} md={4}>
+                <i className="fab fa-php"></i>
+                <p>PHP</p>
+              </Grid>
+              <Grid item xs={12} sm={12} md={4}>
+                <i className="fab fa-angular"></i>
+                <p>Angular</p>
+              </Grid>
+            </div>
           </Grid>
         </Grid>
       </Grid>

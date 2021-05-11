@@ -108,24 +108,23 @@ const Projects = () => {
                     variant="h5"
                     component="h4"
                   >
-                    Twitter Clone
+                    Studysey
                   </Typography>
                   <Typography
                     variant="body2"
                     className={classes.textBody}
                     component="p"
                   >
-                    An application built to simulate and improve the features of
-                    Twitter. It has all the core functionalities and follows the
-                    design principles of the Twitter app. With this app, a user
-                    can have a better experience in tweeting and sharing his
-                    thoughts across the globe.
+                    An AI-driven applicant experience platform that leverages
+                    technology and peer engagements to guide prospective
+                    students through study choices, applications and enrolment
+                    into Higher Institutions.
                   </Typography>
                 </CardContent>
               </CardActionArea>
               <CardActions>
                 <Button
-                  href="https://my-twitter-clone.netlify.app/layout"
+                  href="https://studysey.com/"
                   target="_blank"
                   variant="contained"
                   className={classes.btn}
@@ -151,24 +150,21 @@ const Projects = () => {
                     variant="h5"
                     component="h4"
                   >
-                    Customers' Admin Portal
+                    Kwaba Web App
                   </Typography>
                   <Typography
                     variant="body2"
                     className={classes.textBody}
                     component="p"
                   >
-                    An application built to aid business owners and
-                    organizations' managers in managing their customers' data.
-                    With this app, the administrative activities on customers
-                    management is moved to the cloud for better security and
-                    improved efficiency.
+                    Kwaba helps renters split their bulk rent or deposit into
+                    convenient monthly payments
                   </Typography>
                 </CardContent>
               </CardActionArea>
               <CardActions>
                 <Button
-                  href="https://customers-contact-manager.netlify.app/"
+                  href="https://kwaba.ng/"
                   target="_blank"
                   variant="contained"
                   className={classes.btn}
@@ -194,23 +190,20 @@ const Projects = () => {
                     variant="h5"
                     component="h4"
                   >
-                    Ride Booking App
+                    Kwaba Admin
                   </Typography>
                   <Typography
                     variant="body2"
                     className={classes.textBody}
                     component="p"
                   >
-                    To make ride sharing services available and easily
-                    accessible to the local communities and areas, this app was
-                    built. It has all it takes to have great user experience in
-                    booking rides and managing your bookings effectively.
+                    An Admin portal for managing Kwaba's transactions
                   </Typography>
                 </CardContent>
               </CardActionArea>
               <CardActions>
                 <Button
-                  href="https://ride-booker.netlify.app/"
+                  href="https://admin.kwaba.ng/login"
                   target="_blank"
                   variant="contained"
                   className={classes.btn}

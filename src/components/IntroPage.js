@@ -59,8 +59,10 @@ const IntroPage = () => {
             className={classes.typed2}
             strings={[
               "A Software Engineer",
+              "An Infrastructure Engineer",
+              "A Back end Engineer",
               "A Web Developer",
-              "A Full Stack Developer",
+              "A Full Stack Engineer",
               "A Freelancer",
             ]}
             typeSpeed={70}
