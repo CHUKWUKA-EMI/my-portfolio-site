@@ -46,14 +46,21 @@ const IntroPage = () => {
   const classes = useStyles();
   return (
     <Grid direction="column" container className={classes.root}>
-      <Grid direction="column" className={classes.typedGrid} item xs={12}>
-        <Typography
-          data-aos="slide-right"
-          data-aos-duration="2000"
-          className={classes.typed1}
-        >
-          I'm Chukwuka Emi
-        </Typography>
+      <Grid
+        style={{ display: "flex", flexDirection: "column" }}
+        className={classes.typedGrid}
+        item
+        xs={12}
+      >
+        <Grid item>
+          <Typography
+            data-aos="slide-right"
+            data-aos-duration="2000"
+            className={classes.typed1}
+          >
+            I'm Chukwuka Emi
+          </Typography>
+        </Grid>
         <Grid item>
           <Typed
             className={classes.typed2}

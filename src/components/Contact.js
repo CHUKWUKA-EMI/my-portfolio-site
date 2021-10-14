@@ -21,8 +21,12 @@ import {
   Send,
   Create,
 } from "@material-ui/icons";
-import Helmet from "react-helmet";
+import mapboxgl from "mapbox-gl";
 import Spinner from "./Spinner";
+import dotenv from "dotenv";
+import "mapbox-gl/dist/mapbox-gl.css";
+
+dotenv.config();
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -101,6 +105,11 @@ const useStyles = makeStyles((theme) => ({
 
 const Contact = () => {
   const classes = useStyles();
+  const mapContainer = React.useRef(null);
+  const map = React.useRef();
+  const [lng, setLng] = React.useState(3.38);
+  const [lat, setLat] = React.useState(6.61);
+  const [zoom, setZoom] = React.useState(9);
   const [name, setName] = React.useState("");
   const [email, setEmail] = React.useState("");
   const [subject, setSubject] = React.useState("");
@@ -109,6 +118,8 @@ const Contact = () => {
   const [success, setSuccess] = React.useState("");
   const [loading, setLoading] = React.useState(false);
   const [isError, setIsError] = React.useState(false);
+
+  mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN;
 
   const sendMessage = async () => {
     const validEmail = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(
@@ -227,29 +238,55 @@ const Contact = () => {
     }
   };
 
+  //initialize map
   React.useEffect(() => {
-    window.initMap = () => {
-      new window.google.maps.Map(document.getElementById("map"), {
-        center: {
-          lat: 6.529931,
-          lng: 3.361502,
-        },
-        zoom: 18,
-      });
-    };
+    if (map.current) return; // initialize map only once
+    map.current = new mapboxgl.Map({
+      container: mapContainer.current,
+      style: "mapbox://styles/mapbox/streets-v11",
+      center: [lng, lat],
+      zoom: zoom,
+    });
+    const geolocate = new mapboxgl.GeolocateControl({
+      positionOptions: {
+        enableHighAccuracy: true,
+      },
+      trackUserLocation: true,
+      showUserLocation: true,
+    });
+
+    map.current.addControl(geolocate, "top-right");
+    const nav = new mapboxgl.NavigationControl({
+      showCompass: true,
+      showZoom: true,
+      visualizePitch: true,
+    });
+    map.current.addControl(nav, "top-right");
+    map.current.addControl(new mapboxgl.FullscreenControl(), "top-right");
+  }, [lng, lat, zoom]);
+
+  //set default geolocation to the location of the user
+  React.useEffect(() => {
+    window.navigator.geolocation.getCurrentPosition((data) => {
+      const newLng = Number(data.coords.longitude.toFixed(4));
+      const newLat = Number(data.coords.latitude.toFixed(4));
+      map.current.setCenter([newLng, newLat]);
+      map.current.zoomTo(10);
+    });
   }, []);
+
+  //Reset the geolocation coordinates when the map is zoomed
+  React.useEffect(() => {
+    if (!map.current) return; // wait for map to initialize
+    map.current.on("move", () => {
+      setLng(Number(map.current?.getCenter().lng.toFixed(4)));
+      setLat(Number(map.current?.getCenter().lat.toFixed(4)));
+      setZoom(Number(map.current?.getZoom().toFixed(2)));
+    });
+  });
 
   return (
     <>
-      <Helmet>
-        <script
-          src={
-            "https://maps.googleapis.com/maps/api/js?key=AIzaSyCXxRFxPCIqWYIKwjmByXzT6Er-pqBV97Y&callback=initMap"
-          }
-          async
-          defer
-        ></script>
-      </Helmet>
       <div className={classes.root}>
         <Grid container spacing={3}>
           <Typography className={classes.title1} variant="h3">
@@ -384,9 +421,19 @@ const Contact = () => {
             <Grid className={classes.map} item md={7}>
               <Card data-aos="fade-left" elevation={6}>
                 <CardContent>
-                  <div id="map" style={{ height: 450 }}></div>
+                  {/* <div id="map" style={{ height: 450 }}></div> */}
+                  <div ref={mapContainer} style={{ height: 450 }} />
                 </CardContent>
               </Card>
+              <div
+                style={{
+                  marginTop: "1em",
+                  textAlign: "center",
+                  fontWeight: 700,
+                }}
+              >
+                View your location
+              </div>
             </Grid>
           </Grid>
         </Grid>
