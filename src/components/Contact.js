@@ -21,7 +21,8 @@ import {
   Send,
   Create,
 } from "@material-ui/icons";
-import mapboxgl from "mapbox-gl";
+// eslint-disable-next-line import/no-webpack-loader-syntax
+import mapboxgl from "!mapbox-gl";
 import Spinner from "./Spinner";
 import dotenv from "dotenv";
 import "mapbox-gl/dist/mapbox-gl.css";
